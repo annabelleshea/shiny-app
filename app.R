@@ -1,11 +1,9 @@
-library(shiny)
-library(leaflet)
-
 # Load the pre-trained XGBoost model
 model <- readRDS("xgboost_model.rds")
 
 # Define UI for the app
-  titlePanel("House Price Prediction with Location Map"),
+ui <- fluidPage(  # You were missing fluidPage() to wrap your UI components
+  titlePanel("House Price Prediction with Location Map"),  # Removed the trailing comma here
   
   sidebarLayout(
     sidebarPanel(
@@ -87,3 +85,4 @@ server <- function(input, output, session) {
 
 # Run the application
 shinyApp(ui = ui, server = server)
+
