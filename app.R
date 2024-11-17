@@ -1,3 +1,8 @@
+library(shiny)
+library(leaflet)  
+library(xgboost)
+library(dplyr)
+
 # Load the pre-trained XGBoost model
 model <- readRDS("xgboost_model.rds")
 
